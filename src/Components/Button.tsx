@@ -2,13 +2,15 @@ import { FC } from 'react';
 
 interface Types {
     value: string;
-    style: any;
+    style?: any;
+    className?: string;
     onClick: () => void;
 };
 
-const Button: FC<Types> = ({ value, style, onClick }) => (
+const Button: FC<Types> = ({ value, style, className, onClick }) => (
     <button
         style={style}
+        className={className}
         onClick={onClick}
     >
         {value}
