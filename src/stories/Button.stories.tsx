@@ -1,41 +1,30 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Button from '../Components/Button';
 
-import { Button } from './Button';
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
-  component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof Button>;
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
-
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
+    title: "Button",
+    component: Button
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
+export const BtnLg = () => (
+    <Button
+        value={"Button Large"}
+        style={{ padding: "1rem 1.3rem", backgroundColor: " black", color: "white", cursor: "pointer", borderRadius: "4px",  outline: "none" }}
+        onClick={() => alert("Clicked 1!")}
+    />
+);
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
+export const BtnMd = () => (
+    <Button
+        value={"Button Medium"}
+        style={{ padding: "0.7rem 0.9rem", backgroundColor: " darkcyan", color: "black", cursor: "pointer", borderRadius: "4px",  outline: "none" }}
+        onClick={() => alert("Clicked 2!")}
+    />
+);
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+export const BtnSm = () => (
+    <Button
+        value={"Button Small"}
+        style={{ padding: "0.5rem 0.6rem", backgroundColor: " cyan", color: "black", cursor: "pointer", borderRadius: "4px",  outline: "none" }}
+        onClick={() => alert("Clicked 3!")}
+    />
+);
